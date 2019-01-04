@@ -1,0 +1,6 @@
+framework module NKNetworker {
+  umbrella header "NKNetworker-umbrella.h"
+
+  export *
+  module * { export * }
+}

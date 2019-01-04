@@ -1,0 +1,6 @@
+framework module Pods_NKNetworker_Example {
+  umbrella header "Pods-NKNetworker_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

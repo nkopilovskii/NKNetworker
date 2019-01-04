@@ -1,0 +1,16 @@
+PODS:
+  - NKNetworker (0.1.0)
+
+DEPENDENCIES:
+  - NKNetworker (from `../`)
+
+EXTERNAL SOURCES:
+  NKNetworker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  NKNetworker: 8296b7e2138a33f54dede047d014152234f3a99d
+
+PODFILE CHECKSUM: 4e07ca960da05106000ffcd4cdc519340f7de6b3
+
+COCOAPODS: 1.5.3
