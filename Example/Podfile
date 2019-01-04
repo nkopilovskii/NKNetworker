@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NKNetworker_Example' do
+  pod 'NKNetworker', :path => '../'
+
+  target 'NKNetworker_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
