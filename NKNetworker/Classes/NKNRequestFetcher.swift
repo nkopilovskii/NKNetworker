@@ -19,20 +19,20 @@ public extension NKNRequestFetcher {
 open class NKNRequestFetcher<RequestT: Encodable> {
   
   //MARK: Base properties
-  var endpoint: NKNEndpoint
-  var header: NKNHeaderParameters?
-  var path: NKNPathParameters?
-  var query: NKNQueryParameters?
+  open var endpoint: NKNEndpoint
+  open var header: NKNHeaderParameters?
+  open var path: NKNPathParameters?
+  open var query: NKNQueryParameters?
   
-  var errorHandler: NKNResponseErrorHandler?
-  var exceptionHandler: NKNResponseExeptionHandler?
+  open var errorHandler: NKNResponseErrorHandler?
+  open var exceptionHandler: NKNResponseExeptionHandler?
   
   //MARK: Log properties
-  var printLogRequest = false
-  var logRequestEncodingFormat = String.Encoding.utf8
+  open var printLogRequest = false
+  open var logRequestEncodingFormat = String.Encoding.utf8
   
-  var printLogResponse = false
-  var logResponseEncodingFormat = String.Encoding.utf8
+  open var printLogResponse = false
+  open var logResponseEncodingFormat = String.Encoding.utf8
   
   required public init(_ endpoint: NKNEndpoint, header: NKNHeaderParameters? = nil, path: NKNPathParameters? = nil, query: NKNQueryParameters? = nil, errorHandler: NKNResponseErrorHandler? = nil, exeptionHandler: NKNResponseExeptionHandler? = nil) {
     self.endpoint = endpoint
@@ -108,7 +108,7 @@ public extension NKNRequestFetcher {
         return
       }
       
-      
+      debugPrint(String(data: data, encoding: .utf8) ?? "")
       handler(.success(data))
       }.resume()
   }
