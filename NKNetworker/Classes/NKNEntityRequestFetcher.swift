@@ -11,58 +11,58 @@ import Foundation
 public class NKNEntityRequestFetcher<RequestT: Encodable, ResponseT: Decodable>: NKNRequestFetcher<RequestT> {
   
   //MARK: Fetcher Completion Closure
-  typealias EntityRequestCompletion<ResponseT> = (NKNResponse<ResponseT>)->()
+  public typealias EntityRequestCompletion<ResponseT> = (NKNResponse<ResponseT>)->()
   
   
-  func connect(_ then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func connect(_ then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.CONNECT) { response in
       self.validate(response, then: then)
     }
   }
   
-  func delete(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func delete(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.DELETE, body: body) { response in
       self.validate(response, then: then)
     }
   }
   
-  func get(_ then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func get(_ then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.GET) { response in
       self.validate(response, then: then)
     }
   }
   
-  func head(_ then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func head(_ then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.HEAD) { response in
       self.validate(response, then: then)
     }
   }
   
-  func options(_ then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func options(_ then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.OPTIONS) { response in
       self.validate(response, then: then)
     }
   }
   
-  func patch(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func patch(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.PATCH, body: body) { response in
       self.validate(response, then: then)
     }
   }
   
-  func post(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func post(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.POST, body: body) {  response in
       self.validate(response, then: then)
     }
   }
   
-  func put(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func put(_ body: RequestT? = nil, then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.PUT, body: body) { response in
       self.validate(response, then: then)
     }
   }
   
-  func trace(_ then: @escaping EntityRequestCompletion<ResponseT>) {
+  public func trace(_ then: @escaping EntityRequestCompletion<ResponseT>) {
     super.make(.TRACE) { response in
       self.validate(response, then: then)
     }

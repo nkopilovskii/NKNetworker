@@ -16,7 +16,7 @@ public extension NKNRequestFetcher {
 //MARK: -
 
 //MARK: - NKNRequestFetcher base generic
-public class NKNRequestFetcher<RequestT: Encodable> {
+open class NKNRequestFetcher<RequestT: Encodable> {
   
   //MARK: Base properties
   var endpoint: NKNEndpoint
@@ -34,7 +34,7 @@ public class NKNRequestFetcher<RequestT: Encodable> {
   var printLogResponse = false
   var logResponseEncodingFormat = String.Encoding.utf8
   
-  required init(_ endpoint: NKNEndpoint, header: NKNHeaderParameters? = nil, path: NKNPathParameters? = nil, query: NKNQueryParameters? = nil, errorHandler: NKNResponseErrorHandler? = nil, exeptionHandler: NKNResponseExeptionHandler? = nil) {
+  required public init(_ endpoint: NKNEndpoint, header: NKNHeaderParameters? = nil, path: NKNPathParameters? = nil, query: NKNQueryParameters? = nil, errorHandler: NKNResponseErrorHandler? = nil, exeptionHandler: NKNResponseExeptionHandler? = nil) {
     self.endpoint = endpoint
     self.header = header
     self.path = path
