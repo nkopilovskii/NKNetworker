@@ -22,11 +22,3 @@ enum Endpoint: String, NKNEndpoint {
   
 }
 
-struct Path {
-  var key: String?
-  
-  var value: String?
-  
-
-}
-

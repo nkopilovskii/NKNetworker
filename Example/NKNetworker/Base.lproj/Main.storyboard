@@ -22,35 +22,111 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s49-K1-ph6">
-                                <rect key="frame" x="32" y="52" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="16" y="52" width="167.5" height="27"/>
+                                <color key="backgroundColor" red="0.2056275904" green="0.47037732599999998" blue="0.96475392579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Get Post List">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="btnTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="oXc-eb-Nue"/>
+                                    <action selector="btnPostListTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Z5J-1n-iO1"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xkv-DY-807">
-                                <rect key="frame" x="16" y="106" width="343" height="561"/>
+                                <rect key="frame" x="16" y="138" width="343" height="529"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Welcome to NKNetworker Test!
+
+
+
+
+
+
+
+
+Copyright (c) 2019 nkopilovskii &lt;nkopilovskii@gmail.com&gt;</string>
                                 <color key="textColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRp-f2-HIq">
+                                <rect key="frame" x="191.5" y="52" width="167.5" height="27"/>
+                                <color key="backgroundColor" red="0.2056275904" green="0.47037732599999998" blue="0.96475392579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Get User Post List">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnUserPostListTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="vSc-m5-cpX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mok-yZ-ibb">
+                                <rect key="frame" x="135.5" y="87" width="104" height="27"/>
+                                <color key="backgroundColor" red="0.2056275904" green="0.47037732599999998" blue="0.96475392579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Get Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPostTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="V6H-Io-G2l"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMQ-k8-F4a">
+                                <rect key="frame" x="16" y="87" width="103.5" height="27"/>
+                                <color key="backgroundColor" red="0.2056275904" green="0.47037732599999998" blue="0.96475392579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Create Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPostCreateTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MfM-JJ-YJA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51B-Rr-xab">
+                                <rect key="frame" x="255.5" y="87" width="103.5" height="27"/>
+                                <color key="backgroundColor" red="0.2056275904" green="0.47037732599999998" blue="0.96475392579999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Delete Post">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPostDeleteTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ivE-J2-6cX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Xkv-DY-807" secondAttribute="trailing" id="0PZ-oO-TCp"/>
                             <constraint firstItem="s49-K1-ph6" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="32" id="0gg-VD-cId"/>
-                            <constraint firstItem="Xkv-DY-807" firstAttribute="top" secondItem="s49-K1-ph6" secondAttribute="bottom" constant="24" id="1fc-RB-qNY"/>
+                            <constraint firstItem="RRp-f2-HIq" firstAttribute="top" secondItem="s49-K1-ph6" secondAttribute="top" id="6Vb-YH-0q6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RRp-f2-HIq" secondAttribute="trailing" id="7fJ-cw-rf0"/>
+                            <constraint firstItem="nMQ-k8-F4a" firstAttribute="top" secondItem="s49-K1-ph6" secondAttribute="bottom" constant="8" id="9pH-po-a8g"/>
                             <constraint firstItem="Xkv-DY-807" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="Cg1-0E-3Ty"/>
+                            <constraint firstItem="Mok-yZ-ibb" firstAttribute="bottom" secondItem="nMQ-k8-F4a" secondAttribute="bottom" id="ICE-2q-gCw"/>
+                            <constraint firstItem="RRp-f2-HIq" firstAttribute="leading" secondItem="s49-K1-ph6" secondAttribute="trailing" constant="8" id="N73-tN-iUW"/>
+                            <constraint firstItem="51B-Rr-xab" firstAttribute="top" secondItem="Mok-yZ-ibb" secondAttribute="top" id="Tha-rg-Omp"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Xkv-DY-807" secondAttribute="bottom" id="WFX-Cn-uEe"/>
-                            <constraint firstItem="s49-K1-ph6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="16" id="xcy-za-rSR"/>
+                            <constraint firstItem="51B-Rr-xab" firstAttribute="trailing" secondItem="RRp-f2-HIq" secondAttribute="trailing" id="YV3-Tv-Hkq"/>
+                            <constraint firstItem="Xkv-DY-807" firstAttribute="top" secondItem="Mok-yZ-ibb" secondAttribute="bottom" constant="24" id="aiZ-Zd-QH5"/>
+                            <constraint firstItem="51B-Rr-xab" firstAttribute="leading" secondItem="Mok-yZ-ibb" secondAttribute="trailing" constant="16" id="dhK-GH-qoP"/>
+                            <constraint firstItem="51B-Rr-xab" firstAttribute="bottom" secondItem="Mok-yZ-ibb" secondAttribute="bottom" id="fet-Rf-vCA"/>
+                            <constraint firstItem="Mok-yZ-ibb" firstAttribute="leading" secondItem="nMQ-k8-F4a" secondAttribute="trailing" constant="16" id="hCg-C2-pH4"/>
+                            <constraint firstItem="RRp-f2-HIq" firstAttribute="bottom" secondItem="s49-K1-ph6" secondAttribute="bottom" id="hiz-cK-4La"/>
+                            <constraint firstItem="51B-Rr-xab" firstAttribute="width" secondItem="Mok-yZ-ibb" secondAttribute="width" id="kPM-Yx-oSF"/>
+                            <constraint firstItem="Mok-yZ-ibb" firstAttribute="width" secondItem="nMQ-k8-F4a" secondAttribute="width" id="kev-Ji-1JH"/>
+                            <constraint firstItem="Mok-yZ-ibb" firstAttribute="top" secondItem="nMQ-k8-F4a" secondAttribute="top" id="m2E-LV-J1W"/>
+                            <constraint firstItem="RRp-f2-HIq" firstAttribute="width" secondItem="s49-K1-ph6" secondAttribute="width" id="mh5-Q9-WMQ"/>
+                            <constraint firstItem="nMQ-k8-F4a" firstAttribute="leading" secondItem="s49-K1-ph6" secondAttribute="leading" id="uaY-Kc-2c5"/>
+                            <constraint firstItem="s49-K1-ph6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="xcy-za-rSR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textLog" destination="Xkv-DY-807" id="tew-0X-7Nu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="106" y="81"/>
+            <point key="canvasLocation" x="104.8" y="80.50974512743629"/>
         </scene>
     </scenes>
 </document>

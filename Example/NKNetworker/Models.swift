@@ -9,8 +9,8 @@
 import Foundation
 import NKNetworker
 
-//MARK: - EmptyRequestBody
-class EmptyRequestBody: Encodable {}
+//MARK: - EmptyBody
+class EmptyBody: Codable {}
 
 
 //MARK: - User
@@ -62,8 +62,16 @@ extension User {
 
 //MARK: - Post
 class Post: Codable {
-  var userId, id: Int
+  var id: Int?
+  var userId: Int
   var title, body: String
+  
+  init(id: Int?, userId: Int, title: String, body: String) {
+    self.id = id
+    self.userId = userId
+    self.title = title
+    self.body = body
+  }
   
   var description: String {
     return "<Post: \(self) \nuserId: <\(userId)> \nid: <\(id)> \ntitle: <\(title)> \nbody: <\(body)> \n>\n\n"
