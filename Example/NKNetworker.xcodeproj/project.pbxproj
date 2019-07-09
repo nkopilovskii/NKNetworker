@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3902D71B22D4C68D008E634E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71922D4C68D008E634E /* Endpoint.swift */; };
+		3902D71C22D4C68D008E634E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71A22D4C68D008E634E /* Models.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		1A1F36CA4A873D51DE81D65A /* Pods-NKNetworker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NKNetworker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-NKNetworker_Example/Pods-NKNetworker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3460F281CFAB9E114ADF6AC0 /* NKNetworker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = NKNetworker.podspec; path = ../NKNetworker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3902D71922D4C68D008E634E /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		3902D71A22D4C68D008E634E /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3BAA7EF6031CE6D93AB83C10 /* Pods_NKNetworker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NKNetworker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7B598FFD8DF492981ABD19 /* Pods_NKNetworker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NKNetworker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* NKNetworker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NKNetworker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
+				3902D71922D4C68D008E634E /* Endpoint.swift */,
+				3902D71A22D4C68D008E634E /* Models.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -336,7 +342,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				3902D71B22D4C68D008E634E /* Endpoint.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				3902D71C22D4C68D008E634E /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
