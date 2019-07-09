@@ -1,5 +1,5 @@
 import XCTest
-import NKNetworker
+//import NKNetworker
 
 class Tests: XCTestCase {
     
