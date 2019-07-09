@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  NKNResponse.swift
 //  NKNetworker
 //
 //  Created by Nick Kopilovskii on 7/9/19.

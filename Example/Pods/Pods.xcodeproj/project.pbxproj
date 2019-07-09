@@ -15,6 +15,8 @@
 		3902D71022D4AC4D008E634E /* NKNException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D70F22D4AC4D008E634E /* NKNException.swift */; };
 		3902D71222D4AE6B008E634E /* NKNResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71122D4AE6B008E634E /* NKNResponse.swift */; };
 		3902D71422D4AF0E008E634E /* NKNRequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71322D4AF0E008E634E /* NKNRequestFetcher.swift */; };
+		3902D71622D4C387008E634E /* NKNEntityRequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71522D4C387008E634E /* NKNEntityRequestFetcher.swift */; };
+		3902D71822D4C47C008E634E /* NKNListRequestFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902D71722D4C47C008E634E /* NKNListRequestFetcher.swift */; };
 		61B2BC977AEB9AAEFA5D5F3FD1130BF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		6E286EF8358800F797D81CE3A15289DB /* Pods-NKNetworker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE23F83979E78838EDF32FBB203E245 /* Pods-NKNetworker_Example-dummy.m */; };
 		7625114E8A17F412FD1D7970FD3235F3 /* Pods-NKNetworker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C45DE08DDDF2A963C26D7F8DB0901018 /* Pods-NKNetworker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,6 +62,8 @@
 		3902D70F22D4AC4D008E634E /* NKNException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NKNException.swift; path = NKNetworker/Classes/NKNException.swift; sourceTree = "<group>"; };
 		3902D71122D4AE6B008E634E /* NKNResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NKNResponse.swift; path = NKNetworker/Classes/NKNResponse.swift; sourceTree = "<group>"; };
 		3902D71322D4AF0E008E634E /* NKNRequestFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NKNRequestFetcher.swift; path = NKNetworker/Classes/NKNRequestFetcher.swift; sourceTree = "<group>"; };
+		3902D71522D4C387008E634E /* NKNEntityRequestFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NKNEntityRequestFetcher.swift; path = NKNetworker/Classes/NKNEntityRequestFetcher.swift; sourceTree = "<group>"; };
+		3902D71722D4C47C008E634E /* NKNListRequestFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NKNListRequestFetcher.swift; path = NKNetworker/Classes/NKNListRequestFetcher.swift; sourceTree = "<group>"; };
 		3C022E8801B79D9E93836D74EECA671C /* NKNetworker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NKNetworker-umbrella.h"; sourceTree = "<group>"; };
 		4118DA3904393B705B610C89FD1AC037 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		438B24DB6B8E695D59AF76DA48A38ECA /* Pods-NKNetworker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NKNetworker_Example-resources.sh"; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				3902D70F22D4AC4D008E634E /* NKNException.swift */,
 				3902D71122D4AE6B008E634E /* NKNResponse.swift */,
 				3902D71322D4AF0E008E634E /* NKNRequestFetcher.swift */,
+				3902D71522D4C387008E634E /* NKNEntityRequestFetcher.swift */,
+				3902D71722D4C47C008E634E /* NKNListRequestFetcher.swift */,
 			);
 			name = NKNetworker;
 			path = ../..;
@@ -413,10 +419,12 @@
 				3902D70822D4A8D6008E634E /* Reachability.swift in Sources */,
 				3902D70C22D4AA0A008E634E /* NKNRequestParameter.swift in Sources */,
 				3902D71222D4AE6B008E634E /* NKNResponse.swift in Sources */,
+				3902D71822D4C47C008E634E /* NKNListRequestFetcher.swift in Sources */,
 				3902D71422D4AF0E008E634E /* NKNRequestFetcher.swift in Sources */,
 				3902D70A22D4A9D5008E634E /* NKNEndpoint.swift in Sources */,
 				92295CC1E4D3E3B781301253F74D0D8A /* NKNetworker-dummy.m in Sources */,
 				3902D70E22D4AB8A008E634E /* NKNError.swift in Sources */,
+				3902D71622D4C387008E634E /* NKNEntityRequestFetcher.swift in Sources */,
 				3902D71022D4AC4D008E634E /* NKNException.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
