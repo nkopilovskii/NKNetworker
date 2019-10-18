@@ -28,6 +28,13 @@ it, simply add the following line to your Podfile:
 pod 'NKNetworker'
 ```
 
+## Version history
+
+### v.0.1.0
+
+### v.0.1.1
+- Fixed issue, when on requests with empty body (`body = nil`) Data-object (JSON) initialized as 4 bytes
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com
