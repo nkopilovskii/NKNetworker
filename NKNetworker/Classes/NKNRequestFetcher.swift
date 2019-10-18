@@ -98,8 +98,18 @@ public extension NKNRequestFetcher {
       return
     }
     
-    let json = try? JSONEncoder().encode(body)
-    guard let request = NKNRequestFetcher.request(requestHTTPMethod, with: url, header: header, body: json) else {
+    let json: Data? = try? JSONEncoder().encode(body)
+    
+    let req: URLRequest? = {
+      if body == nil {
+        return self.request(requestHTTPMethod, with: url, header: header)
+      } else {
+        return self.request(requestHTTPMethod, with: url, header: header, body: json)
+      }
+    }()
+      
+  
+    guard let request = req else {
       handler(.failure(NKNStaticError.invalidRequest))
       return
     }
@@ -138,7 +148,7 @@ public extension NKNRequestFetcher {
 //MARK: - NKNRequestFetcher request creater
 fileprivate extension NKNRequestFetcher {
   
-  static func request(_ type: HTTPMethod, with url: URL?, header: NKNHeaderParameters? = nil, body: Data? = nil) -> URLRequest? {
+  func request(_ type: HTTPMethod, with url: URL?, header: NKNHeaderParameters? = nil, body: Data? = nil) -> URLRequest? {
     guard let url = url else { return nil }
     var request = URLRequest(url: url)
     request.httpMethod = type.rawValue
