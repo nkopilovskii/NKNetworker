@@ -35,6 +35,9 @@ pod 'NKNetworker'
 ### v.0.1.1
 - Fixed issue, when on requests with empty body (`body = nil`) Data-object (JSON) initialized as 4 bytes
 
+### v.0.1.2
+- Fixed issue with undecoded symbols in URL string
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com
