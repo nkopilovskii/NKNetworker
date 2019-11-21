@@ -113,7 +113,7 @@ public extension NKNRequestFetcher {
       handler(.failure(NKNStaticError.invalidRequest))
       return
     }
-    print(request)
+//    print(request)
     
     URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
       self?.print(data)
@@ -138,7 +138,7 @@ public extension NKNRequestFetcher {
         return
       }
       
-      debugPrint(String(data: data, encoding: .utf8) ?? "")
+//      debugPrint(String(data: data, encoding: .utf8) ?? "")
       handler(.success(data))
       }.resume()
   }

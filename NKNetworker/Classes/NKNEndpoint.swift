@@ -41,8 +41,8 @@ public extension NKNEndpoint {
     if let pathParameters = pathParameters {
       urlString.append("/")
       pathParameters.forEach {
-        guard let value = $0.value else { return }
-        guard let key = $0.key, let range = urlString.range(of: key) else {
+        guard let value = $0.value?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        guard let key = $0.key?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed), let range = urlString.range(of: key) else {
           urlString.append(value)
           return
         }
@@ -54,7 +54,7 @@ public extension NKNEndpoint {
       var query = String()
       queryParameters.forEach {
         query.append(query.isEmpty ? "?" : "&")
-        query.append($0.stringValue ?? "")
+        query.append($0.stringValue?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "")
       }
       urlString.append(query)
     }
