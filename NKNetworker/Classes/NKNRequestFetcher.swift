@@ -113,7 +113,8 @@ public extension NKNRequestFetcher {
       handler(.failure(NKNStaticError.invalidRequest))
       return
     }
-//    print(request)
+    
+    print(request)
     
     URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
       self?.print(data)
@@ -138,7 +139,6 @@ public extension NKNRequestFetcher {
         return
       }
       
-//      debugPrint(String(data: data, encoding: .utf8) ?? "")
       handler(.success(data))
       }.resume()
   }
@@ -152,7 +152,6 @@ fileprivate extension NKNRequestFetcher {
     guard let url = url else { return nil }
     var request = URLRequest(url: url)
     request.httpMethod = type.rawValue
-    request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
     if let header = header {
       header.forEach {
         guard let key = $0.key, let value = $0.value else { return }
@@ -173,14 +172,14 @@ fileprivate extension NKNRequestFetcher {
   func print(_ request: URLRequest) {
     guard printLogRequest else { return }
     
-    let logText = "<\(String(describing: self)) >"
+    let logText = "<" + String(describing: self) + " Header Fields: " + String(describing: request.allHTTPHeaderFields) + " >"
     debugPrint(logText)
   }
   
   func print(_ responseData: Data?) {
-    guard printLogResponse else { return }
+    guard let data = responseData, printLogResponse else { return }
     
-    let logText = "<\(String(describing: self)) >"
+    let logText = "<" + String(describing: self) + " Response Data: " + (String(data: data, encoding: logResponseEncodingFormat) ?? "") + " >"
     debugPrint(logText)
   }
 }

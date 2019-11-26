@@ -22,6 +22,8 @@ class ViewController: UIViewController {
   @IBAction func btnPostListTouchUpInside(_ sender: Any) {
     textLog.text = licence
     let fetcher = PostList(Endpoint.posts)
+    fetcher.printLogRequest = true
+    fetcher.printLogResponse = true
     fetcher.get { [weak self] in
       switch $0 {
       case .success(let posts):

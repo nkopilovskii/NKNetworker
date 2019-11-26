@@ -38,6 +38,10 @@ pod 'NKNetworker'
 ### v.0.1.2
 - Fixed issue with undecoded symbols in URL string
 
+### v.0.1.3
+- Fixed request/response log print
+- Removed default header `Content-Type: application/json; charset=utf-8`
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com
