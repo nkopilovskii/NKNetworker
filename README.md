@@ -42,6 +42,9 @@ pod 'NKNetworker'
 - Fixed request/response log print
 - Removed default header `Content-Type: application/json; charset=utf-8`
 
+### v.0.1.4
+- Fixed issue with path parameter's separator
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com

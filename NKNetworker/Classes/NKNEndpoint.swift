@@ -39,8 +39,12 @@ public extension NKNEndpoint {
     var urlString = stringValue
     
     if let pathParameters = pathParameters {
-      urlString.append("/")
+      
       pathParameters.forEach {
+        if urlString.last != "/" {
+          urlString.append("/")
+        }
+        
         guard let value = $0.value?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         guard let key = $0.key?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed), let range = urlString.range(of: key) else {
           urlString.append(value)
