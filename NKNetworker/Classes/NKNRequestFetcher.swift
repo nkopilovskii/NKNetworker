@@ -89,7 +89,8 @@ public extension NKNRequestFetcher {
   
   func make(_ requestHTTPMethod: HTTPMethod, body: RequestT? = nil, handler: @escaping NKNRequestCompletion) {
     guard let connection = Reachability()?.connection, connection != Reachability.Connection.none else {
-      handler(.failure(NKNStaticError.noInternetConnection))
+      handler(.failure(errorHandler?(nil, nil, NKNStaticError.noInternetConnection)
+        ?? NKNStaticError.noInternetConnection))
       return
     }
     
@@ -135,7 +136,9 @@ public extension NKNRequestFetcher {
       }
       
       guard let data = data else {
-        handler(requestHTTPMethod.staticExeption == .emptyResponseData ? .success(Data()) : .failure(NKNStaticError.emptyResponseData))
+        handler(requestHTTPMethod.staticExeption == .emptyResponseData ?
+          .success(Data()) :
+          .failure(self?.errorHandler?(nil, nil, NKNStaticError.emptyResponseData) ?? NKNStaticError.emptyResponseData))
         return
       }
       

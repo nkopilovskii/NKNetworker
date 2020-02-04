@@ -35,3 +35,32 @@ enum QueryParameter: NKNQueryParameter {
     }
   }
 }
+
+
+//MARK: - NKNRequestFetcher extension
+
+
+extension NKNRequestFetcher {
+  struct ConnectionError: NKNError {
+    var errorMessage: String? {
+      return "Interner connection was lost"
+    }
+  }
+  
+  static var defaultErrorHandler: NKNResponseErrorHandler {
+    return { data, response, error -> Error? in
+      //Custom handler on static error
+      guard let staticError = error as? NKNStaticError else {
+        return nil
+      }
+      
+      switch staticError {
+      case .noInternetConnection:
+        return ConnectionError()
+      default:
+        return nil
+      }
+      
+    }
+  }
+}

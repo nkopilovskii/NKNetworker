@@ -45,6 +45,9 @@ pod 'NKNetworker'
 ### v.0.1.4
 - Fixed issue with path parameter's separator
 
+### v.0.1.5
+- `NKNRequestFetcher.errorHandler` used to handle `NKNStaticError` in default cases
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com

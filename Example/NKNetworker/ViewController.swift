@@ -22,6 +22,7 @@ class ViewController: UIViewController {
   @IBAction func btnPostListTouchUpInside(_ sender: Any) {
     textLog.text = licence
     let fetcher = PostList(Endpoint.posts)
+    fetcher.errorHandler = PostList.defaultErrorHandler
     fetcher.printLogRequest = true
     fetcher.printLogResponse = true
     fetcher.get { [weak self] in
@@ -32,8 +33,10 @@ class ViewController: UIViewController {
             self?.textLog.text.append(post.description)
           }
         })
-      case .failure(_):
-        break
+      case .failure(let error):
+        DispatchQueue.main.async {
+          self?.textLog.text.append((error as? NKNError)?.errorMessage ?? error.localizedDescription)
+        }
       case .exception(_): break
       }
     }
@@ -45,7 +48,7 @@ class ViewController: UIViewController {
     textLog.text = licence
     
     let userId = 5
-    let fetcher = PostList(Endpoint.posts, query: [QueryParameter.userId(userId)])
+    let fetcher = PostList(Endpoint.posts, query: [QueryParameter.userId(userId)], errorHandler: PostList.defaultErrorHandler)
     fetcher.get { [weak self] in
       switch $0 {
       case .success(let posts):
@@ -54,8 +57,10 @@ class ViewController: UIViewController {
             self?.textLog.text.append(post.description)
           }
         })
-      case .failure(_):
-        break
+      case .failure(let error):
+      DispatchQueue.main.async {
+        self?.textLog.text.append((error as? NKNError)?.errorMessage ?? error.localizedDescription)
+      }
       case .exception(_): break
       }
     }
@@ -67,15 +72,17 @@ class ViewController: UIViewController {
     textLog.text = licence
     
     let postId = 24
-    let fetcher = SinglePost(Endpoint.posts, path: [PathParameter(key: nil, value: "\(postId)")])
+    let fetcher = SinglePost(Endpoint.posts, path: [PathParameter(key: nil, value: "\(postId)")], errorHandler: SinglePost.defaultErrorHandler)
     fetcher.get { [weak self] in
       switch $0 {
       case .success(let post):
         DispatchQueue.main.async {
           self?.textLog.text.append(post.description)
         }
-      case .failure(_):
-        break
+      case .failure(let error):
+      DispatchQueue.main.async {
+        self?.textLog.text.append((error as? NKNError)?.errorMessage ?? error.localizedDescription)
+      }
       case .exception(_): break
       }
     }
@@ -90,15 +97,17 @@ class ViewController: UIViewController {
     let newPost = Post(id: nil, userId: userId, title: "Title", body: "Body")
     
     
-    let fetcher = SinglePost(Endpoint.posts)
+    let fetcher = SinglePost(Endpoint.posts, errorHandler: PostList.defaultErrorHandler)
     fetcher.post(newPost, then: { [weak self] in
       switch $0 {
       case .success(let post):
         DispatchQueue.main.async {
           self?.textLog.text.append(post.description)
         }
-      case .failure(_):
-        break
+      case .failure(let error):
+      DispatchQueue.main.async {
+        self?.textLog.text.append((error as? NKNError)?.errorMessage ?? error.localizedDescription)
+      }
       case .exception(_): break
       }
     })
@@ -111,17 +120,17 @@ class ViewController: UIViewController {
     
     
     let postId = 24
-    let fetcher = SinglePostEmptyResponse(Endpoint.posts, path: [PathParameter(key: nil, value: "\(postId)")])
+    let fetcher = SinglePostEmptyResponse(Endpoint.posts, path: [PathParameter(key: nil, value: "\(postId)")], errorHandler: PostList.defaultErrorHandler)
     fetcher.delete { [weak self] in
       switch $0 {
       case .success(_):
         DispatchQueue.main.async {
           self?.textLog.text.append("Post #\(postId) successfully deleted!")
         }
-      case .failure(_):
-        DispatchQueue.main.async {
-          self?.textLog.text.append("Something went wrong!")
-        }
+      case .failure(let error):
+      DispatchQueue.main.async {
+        self?.textLog.text.append((error as? NKNError)?.errorMessage ?? error.localizedDescription)
+      }
       case .exception(_):
         break
       }
