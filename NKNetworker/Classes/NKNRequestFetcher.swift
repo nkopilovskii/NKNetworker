@@ -32,6 +32,8 @@ public extension NKNRequestFetcher {
   typealias NKNRequestCompletion = (NKNResponse<Data>) -> ()
   typealias NKNResponseErrorHandler = (Data?, URLResponse?, Error?) -> Error?
   typealias NKNResponseExeptionHandler = (Data?, URLResponse?, Error?) -> NKNException?
+    
+  typealias EncodingHandler = (RequestT) -> Data?
 }
 //MARK: -
 
@@ -47,6 +49,8 @@ open class NKNRequestFetcher<RequestT: Encodable> {
   open var errorHandler: NKNResponseErrorHandler?
   open var exceptionHandler: NKNResponseExeptionHandler?
   
+  open var bodyEncodingHandler: EncodingHandler?
+    
   //MARK: Log properties
   open var printLogRequest = false
   open var logRequestEncodingFormat = String.Encoding.utf8
@@ -99,7 +103,13 @@ public extension NKNRequestFetcher {
       return
     }
     
-    let json: Data? = try? JSONEncoder().encode(body)
+    var json: Data? = nil
+    if let bodyEncodingHandler = self.bodyEncodingHandler,
+       let body = body {
+        json = bodyEncodingHandler(body)
+    } else if let body = body {
+        json = try? JSONEncoder().encode(body)
+    }
     
     let req: URLRequest? = {
       if body == nil {

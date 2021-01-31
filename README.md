@@ -48,6 +48,9 @@ pod 'NKNetworker'
 ### v.0.1.5
 - `NKNRequestFetcher.errorHandler` used to handle `NKNStaticError` in default cases
 
+### v.0.1.6
+- `NKNRequestFetcher.body` available custom encoding 
+
 ## Author
 
 nkopilovskii, nkopilovskii@gmail.com
